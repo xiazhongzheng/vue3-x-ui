@@ -1,6 +1,6 @@
 <template>
     <div>
         <x-button></x-button>
-        <x-icon></x-icon>
+        <x-icon name="loading"></x-icon>
     </div>
 </template>

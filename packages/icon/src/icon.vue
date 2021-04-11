@@ -1,11 +1,17 @@
 <template>
-    <span>icon</span>
+    <i :class="`x-icon-${name}`">{{name}}</i>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    name: 'XIcon'
+    name: 'XIcon',
+    props: {
+        name: {
+            type: String,
+            default: ''
+        }
+    }
 })
 </script>

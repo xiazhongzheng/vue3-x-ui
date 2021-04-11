@@ -1,3 +1,4 @@
+// 打包 例子 项目的
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader')
