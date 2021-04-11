@@ -1,13 +1,14 @@
 import { App } from 'vue';
 import Button from '@x-ui/button';
 import Icon from '@x-ui/icon';
+import ButtonGroup from '@x-ui/button-group';
 
 const components = [
     Button,
-    Icon
+    Icon,
+    ButtonGroup
 ]
 
-console.log('1111',Button)
 const install = (app: App): void => {
     components.forEach(component => {
         app.component(component.name, component);

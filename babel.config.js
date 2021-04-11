@@ -3,7 +3,7 @@ module.exports = {
         '@babel/preset-env',
         '@babel/preset-typescript'
     ],
-    overrides: [{
+    overrides: [{ // vue文件中支持ts语法，vue-loader之前执行
         test: /\.vue$/,
         plugins: [
             '@babel/transform-typescript'

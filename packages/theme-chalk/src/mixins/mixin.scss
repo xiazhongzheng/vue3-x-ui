@@ -1,22 +1,24 @@
 @import "../common/var.scss";
 
 
-@include b(button) {
-    @include m(primary) {
-        
-    }
-    @include when(disabled) {
-        color: red
-    }
-}
+// @include b(button) {
+//     @include m(primary) {
+
+//     }
+//     @include when(disabled) {
+//         color: red
+//     }
+// }
 
 // .x-button{}
 @mixin b($block) {
     $B: $namespace+'-'+$block;
-    .#{$B}{
+
+    .#{$B} {
         @content;
     }
 }
+
 // .x-button.is-xxx
 @mixin when($state) {
     @at-root {
@@ -25,6 +27,7 @@
         }
     }
 }
+
 // &--primary => .x-button--primary
 @mixin m($modifier) {
     @at-root {
@@ -33,6 +36,7 @@
         }
     }
 }
+
 // &__header  => .x-button__header
 @mixin e($element) {
     @at-root {
@@ -40,4 +44,10 @@
             @content;
         }
     }
+}
+
+@mixin button-type($color, $background-color, $border-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
 }
