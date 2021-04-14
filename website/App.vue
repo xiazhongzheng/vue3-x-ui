@@ -47,6 +47,21 @@
       <x-col :span="2" style="background-color: green">222</x-col>
       <x-col :span="2" style="background-color: blue">333</x-col>
     </x-row>
+    <x-checkbox
+      v-model="checkVal"
+      @change="handleChange"
+      :disabled="true"
+      :indeterminate="true"
+      >aaa</x-checkbox
+    >
+    {{checkedList}}
+    <x-checkbox-group v-model="checkedList" @change="handleChange">
+      <x-checkbox
+        v-for="city in checkList"
+        :key="city"
+        :label="city"
+      ></x-checkbox>
+    </x-checkbox-group>
   </div>
 </template>
 
@@ -65,10 +80,29 @@ const useButton = () => {
     buttonLoading,
   };
 };
+
+const useCheckbox = () => {
+  const checkVal = ref(true);
+  // const checkVal = ref([true]);
+
+  const checkedList = ref(["北京", "南京"]);
+  const checkList = ref(["北京", "上海", "南京"]);
+
+  const handleChange = (value) => {
+    console.log(value);
+  };
+  return {
+    checkVal,
+    handleChange,
+    checkList,
+    checkedList,
+  };
+};
 export default defineComponent({
   setup() {
     return {
       ...useButton(),
+      ...useCheckbox(),
     };
   },
 });
